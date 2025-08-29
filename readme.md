@@ -31,9 +31,9 @@ This project demonstrates how to **containerize a simple Express.js server with 
 DOCKER-DEPLOYMENT/
 │-- node_modules/
 │-- src/
-│ ├── routes/
-│ │ ├── router.ts
-│ │ └── index.ts
+│   ├── routes/
+│   │   ├── router.ts
+│   │   └── index.ts
 │-- .gitignore
 │-- Dockerfile
 │-- package-lock.json
