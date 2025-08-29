@@ -31,9 +31,9 @@ This project demonstrates how to **containerize a simple Express.js server with 
 DOCKER-DEPLOYMENT/
 │-- node_modules/
 │-- src/
-│   ├── routes/
-│   │   ├── router.ts
-│   │   └── index.ts
+│ ├── routes/
+│ │ ├── router.ts
+│ │ └── index.ts
 │-- .gitignore
 │-- Dockerfile
 │-- package-lock.json
@@ -48,53 +48,53 @@ DOCKER-DEPLOYMENT/
 git clone https://github.com/<your-username>/<repo-name>.git
 cd <repo-name>
 
-### 2. Install dependencies
+2. Install dependencies
 npm install
 
-### 3. Run locally
+3. Run locally
 node index.js
 
 
 Server will run on http://localhost:3000.
 
-## 🐳 Docker Setup
+🐳 Docker Setup
 Build Docker Image
 docker build -t express-ecs-app .
 
-### Run Docker Container
+Run Docker Container
 docker run -p 3000:3000 express-ecs-app
 
-## ☁️ Deploying to AWS
-### 1. Authenticate Docker to AWS ECR
+☁️ Deploying to AWS
+1. Authenticate Docker to AWS ECR
 aws ecr-public get-login-password --region us-east-1 \
 | docker login --username AWS --password-stdin <your-aws-account-id>.dkr.ecr.us-east-1.amazonaws.com
 
-### 2. Create an ECR Repository
+2. Create an ECR Repository
 aws ecr create-repository --repository-name express-ecs-app
 
-### 3. Tag & Push Image to ECR
+3. Tag & Push Image to ECR
 docker tag express-ecs-app:latest <your-aws-account-id>.dkr.ecr.us-east-1.amazonaws.com/express-ecs-app:latest
 
 docker push <your-aws-account-id>.dkr.ecr.us-east-1.amazonaws.com/express-ecs-app:latest
 
-### 4. Deploy on ECS
+4. Deploy on ECS
 
-## Create a Task Definition in ECS
+Create a Task Definition in ECS
 
-### Add the ECR image URL
+Add the ECR image URL
 
-### Run it as a Service (Fargate or EC2 launch type)
+Run it as a Service (Fargate or EC2 launch type)
 
-## Expose port 3000 through a Load Balancer
+Expose port 3000 through a Load Balancer
 
-## ✅ Verification
+✅ Verification
 
-### Once deployed, visit:
+Once deployed, visit:
 
 http://<ecs-service-public-dns>:3000
 
 
-## You should see:
+You should see:
 
 Hello from Express on ECS 🚀
 
