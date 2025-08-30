@@ -27,20 +27,6 @@ This project demonstrates how to **containerize a simple Express.js server with 
 
 ---
 
-## 📂 Project Structure
-DOCKER-DEPLOYMENT/
-│-- node_modules/
-│-- src/
-│   ├── routes/
-│   │   ├── router.ts
-│   │   └── index.ts
-│-- .gitignore
-│-- Dockerfile
-│-- package-lock.json
-│-- package.json
-│-- readme.md
-│-- tsconfig.json
-
 ## 🚀 Getting Started
 
 ### 1. Clone the repository
